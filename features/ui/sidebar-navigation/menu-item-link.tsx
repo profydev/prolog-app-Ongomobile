@@ -33,7 +33,7 @@ export const Anchor = styled.a`
   text-decoration: none;
 `;
 
-export const Icon = styled.img<{ isCollapsed?: boolean }>`
+export const Icon = styled.img`
   width: ${space(6)};
   margin-right: ${space(3)};
 `;
@@ -50,12 +50,7 @@ export function MenuItemLink({
       <Link href={href} passHref>
         <Anchor>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <Icon
-            src={iconSrc}
-            alt={`${text} icon`}
-            isCollapsed={isCollapsed}
-          />{" "}
-          {!isCollapsed && text}
+          <Icon src={iconSrc} alt={`${text} icon`} /> {!isCollapsed && text}
         </Anchor>
       </Link>
     </ListItem>
